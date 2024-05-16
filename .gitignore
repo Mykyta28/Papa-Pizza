@@ -1,0 +1,32 @@
+# Node.js и npm
+node_modules/
+npm-debug.log
+
+# Локальные файлы конфигурации
+.env
+
+# Логи и временные файлы
+logs/
+*.log
+*.pid
+*.seed
+*.db
+
+# Кэшированные файлы
+pids/
+logs/
+*.log
+*.pid
+*.lock
+
+# Локальная база данных SQLite
+*.sqlite
+
+# VSCode
+.vscode/
+
+# Игнорирование всех файлов .DS_Store на всех уровнях вложенности
+**/.DS_Store
+
+# Игнорирование папки сборки
+dist/
