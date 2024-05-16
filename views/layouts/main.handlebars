@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/icons/pizza.png" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    {{#if css}}
+    {{#each css}}
+    <link
+      href="/css/{{.}}"
+      rel="stylesheet"
+    />
+    {{/each}}
+    {{/if}}
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <header class="header">
+      <section class="nav-utility">
+        <header class="nav-container">
+          <a title="Logo" class="logo" href="/">
+            <img
+              src="/images/Papa pizza....png"
+              alt="Papa Pizza image"
+            />
+          </a>
+          <ul class="nav-utility-list">
+            <li class="nav-utility-item nav-utility-item--track-order">
+              <a title="Track the order" href="/cart">
+                <img src="/images/shopping-cart.png" alt="Track order" />
+                <span>Cart</span>
+              </a>
+            </li>
+
+            <li class="nav-utility-item nav-utility-item--location">
+              <a title="Location" href="https://maps.app.goo.gl/oHx1b4ZdEmeJ4KKD8" target="_blank">
+                <img src="/images/placeholder.png" alt="Location" />
+                <span>Location</span>
+              </a>
+            </li>
+
+            <li class="nav-utility-item nav-utility-item--lenguage">
+              <a title="Lenguage" href="#">
+                <img src="/images/globe.png" alt="Location" />
+                <select>
+                  <option value="English">English</option>
+                  <option value="Russian">Russian</option>
+                  <option value="Ukainian">Ukrainian</option>
+                </select>
+              </a>
+            </li>
+            {{#if notLogged}}
+            <li class="nav-utility-item nav-utility-item--login">
+              <a title="Log In" href="/login">
+                <img src="/images/user.png" alt="Account" />
+                <span>Log In</span>
+              </a>
+            </li>
+
+            <li class="nav-utility-item nav-utility-item--signin">
+              <a title="Sign Up" href="/register"> Sign Up </a>
+            </li>
+            {{else}}
+            <li class="nav-utility-item nav-utility-item--login">
+              <a title="Log In" href="/auth/loggout">
+                <img src="/images/user.png" alt="Account" />
+                <span>Loggout</span>
+              </a>
+            </li>
+            {{/if}}
+          </ul>
+        </header>
+      </section>
+      <main>
+        {{{body}}}
+    </main>
+     <footer>
+      <div class="container-footer">
+        <div class="footer-item our-company">
+          <h3>Our company</h3>
+          <ul>
+            <li><a href="#">About Papa Pizza</a></li>
+            <li><a href="#">Invetor Relations</a></li>
+            <li><a href="#">The souse new & stories</a></li>
+            <li><a href="#">No constct delivery</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-item our-pizza">
+          <h3>Our Pizza</h3>
+          <ul>
+            <li><a href="#">Pizza Page</a></li>
+            <li><a href="#">Nutritional Info</a></li>
+            <li><a href="#">The souse new & stories</a></li>
+            <li><a href="#">No constct delivery</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-item help">
+          <h3>help</h3>
+          <ul>
+            <li><a href="#">Customer Servies</a></li>
+            <li><a href="#">Ordering</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Store List</a></li>
+          </ul>
+        </div>
+        <div class="footer-item franchise">
+          <img src="/images/franchise.jpeg" alt="Franchise" />
+          <a href="#"><span>Open Franchise</span></a>
+        </div>
+      </div>
+    </footer>
+    <script src="/script.js"></script>
+    {{#if js}}
+    {{#each js}}
+    <script src="/js/{{.}}"></script>
+    {{/each}}
+    {{/if}}
+  </body>
+</html>

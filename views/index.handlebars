@@ -1,0 +1,970 @@
+<section id="menu">
+  <div class="container-menu">
+    <ul class="conteiner-menu-items">
+      <a id="pizza-link" class="conteiner-menu-item" href="#"><li>Pizza</li></a>
+      <a id="bowl-link" class="conteiner-menu-item" href="#"><li>Papa Bowl</li></a>
+      <a id="wings-link" class="conteiner-menu-item" href="#"><li>Wings</li></a>
+      <a id="drinks-link" class="conteiner-menu-item" href="#"><li
+        >Drinks</li></a>
+      <a id="deserts-link" class="conteiner-menu-item" href="#"><li
+        >Deserts</li></a>
+      <a id="bites-link" class="conteiner-menu-item" href="#"><li>Papa Bites</li></a>
+      <a id="papadia-link" class="conteiner-menu-item" href="#"><li
+        >Papadia</li></a>
+      <a id="sides-link" class="conteiner-menu-item" href="#"><li>Sides</li></a>
+    </ul>
+
+    <!-- Pizzas -->
+    <div class="pizzas">
+      <div class="pizza-items">
+        {{#if pizzas}}
+          {{#each pizzas}}
+            <div class="pizza-item">
+              <img class="pizzaImg" src="{{img}}" alt="{{name}}" />
+              <input type="hidden" name="pizzaId" value="{{_id}}" />
+              <div class="title">
+                <span class="pizzaName">{{name}}</span>
+                <p>
+                  A base pizza features a deliciously simple combination of
+                  freshly made dough, creamy cheese, and flavorful tomato sauce.
+                </p>
+                <form class="pizza-form">
+                  <div>
+                    <input
+                      type="radio"
+                      name="size"
+                      class="radio-size small"
+                      value="10"
+                    />
+                    <label for="small">10"</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="size"
+                      class="radio-size medium"
+                      value="12"
+                    />
+                    <label for="medium">12"</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="size"
+                      class="radio-size large"
+                      value="14"
+                    />
+                    <label for="large">14"</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="size"
+                      class="radio-size xl"
+                      value="16"
+                    />
+                    <label for="xl">16"</label>
+                  </div>
+                  <input type="hidden" name="amount" value="0" />
+                </form>
+                <div class="button-container">
+                  <button class="add-button customize">ADD</button>
+                  <a
+                    href="/customize?id={{_id}}"
+                    class="customize customize-btn"
+                  >Customize</a>
+                  <div class="plus-mines-button">
+                    <button class="decreaseBtn amount">-</button>
+                    <span class="value v">1</span>
+                    <button class="increaseBtn amount">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        {{/if}}
+      </div>
+    </div>
+    <!-- Papa bowls -->
+    <div class="bowls">
+      <ul class="bowl-items">
+        <div class="bowl-item">
+          <img src="/images/it-mits-trio.jpeg" alt="Italian Mist Trio" />
+          <div class="title">
+            <span>Italian Mist Trio</span>
+            <p>
+              A delicious combination of savory salami, ham, and pepperoni,
+              paired with cheese, fresh veggies, and zesty Italian dressing,
+              served over hearty grains or greens for a satisfying meal
+              on-the-go.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <button class="customize">Customize</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bowl-item">
+          <img src="/images/garden-veggie.webp" alt="Garden Veggie" />
+          <div class="title">
+            <span>Garden Veggie</span>
+            <p>
+              A vibrant blend of fresh, crunchy vegetables, such as crisp
+              lettuce, juicy tomatoes, crunchy cucumbers, and sweet bell
+              peppers, tossed with a flavorful dressing and served over a bed of
+              hearty grains or greens, creating a wholesome and satisfying meal
+              option.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <button class="customize">Customize</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bowl-item">
+          <img src="/images/chicken-alfredo.jpeg" alt="Chicken Alfredo" />
+
+          <div class="title">
+            <span>Chicken Alfredo</span>
+            <p>
+              A comforting and indulgent meal featuring tender pieces of grilled
+              chicken tossed with creamy Alfredo sauce, served over a bed of
+              pasta or rice, and topped with a sprinkle of Parmesan cheese and
+              fresh herbs, offering a delicious twist on a classic Italian
+              favorite.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <button class="customize">Customize</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Wings -->
+    <div class="wings">
+      <ul class="wings-items">
+        <ul class="wings-choise">
+          <a id="boneless" href="#"><li>Boneless Wings</li></a>
+          <a id="traditional" href="#"><li>Traditional Wings</li></a>
+        </ul>
+        <div class="boneless">
+          <div class="wings-item">
+            <img
+              src="/images/boneless-buffalo-wings.webp"
+              alt="Buffalo wings"
+            />
+            <div class="title">
+              <span>Buffalo wings</span>
+              <form>
+                <div>
+                  <input type="radio" name="ten" id="ten" />
+                  <label for="ten">10</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="fifteen" id="fifteen" />
+                  <label for="fifteen">15</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty" id="twenty" />
+                  <label for="twenty">20</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-five" id="twenty-five" />
+                  <label for="twenty-five">25</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wings-item">
+            <img src="/images/bbq-boneless-wings.webp" alt="BBQ Wings" />
+            <div class="title">
+              <span>BBQ Wings</span>
+              <form>
+                <div>
+                  <input type="radio" name="ten" id="ten" />
+                  <label for="ten">10</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="fifteen" id="fifteen" />
+                  <label for="fifteen">15</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty" id="twenty" />
+                  <label for="twenty">20</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-five" id="twenty-five" />
+                  <label for="twenty-five">25</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wings-item">
+            <img
+              src="/images/boneless-honey-chipotle.webp"
+              alt="Honey Chipotle Wings"
+            />
+            <div class="title">
+              <span>Honey Chipotle Wings</span>
+              <form>
+                <div>
+                  <input type="radio" name="ten" id="ten" />
+                  <label for="ten">10</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="fifteen" id="fifteen" />
+                  <label for="fifteen">15</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty" id="twenty" />
+                  <label for="twenty">20</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-five" id="twenty-five" />
+                  <label for="twenty-five">25</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wings-item">
+            <img src="/images/hot-lemon-paper.avif" alt="Hot Lemon Paper" />
+            <div class="title">
+              <span>Hot Lemon Paper</span>
+              <form>
+                <div>
+                  <input type="radio" name="ten" id="ten" />
+                  <label for="ten">10</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="fifteen" id="fifteen" />
+                  <label for="eight">15</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty" id="twenty" />
+                  <label for="twenty">20</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-five" id="twenty-five" />
+                  <label for="twenty-five">25</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wings-item">
+            <img src="/images/plain-boneless.webp" alt="Plain Wings" />
+            <div class="title">
+              <span>Plain Wings</span>
+              <form>
+                <div>
+                  <input type="radio" name="ten" id="ten" />
+                  <label for="ten">10</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="fifteen" id="fifteen" />
+                  <label for="fifteen">15</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty" id="twenty" />
+                  <label for="twenty">20</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-five" id="twenty-five" />
+                  <label for="twenty-five">25</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="traditional">
+          <div class="wings-item">
+            <img src="/images/buffalo-wings.jpeg" alt="Buffalo wings" />
+            <div class="title">
+              <span>Buffalo wings</span>
+              <form>
+                <div>
+                  <input type="radio" name="six" id="six" />
+                  <label for="six">6</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="eight" id="eight" />
+                  <label for="eight">8</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="sixteen" id="sixteen" />
+                  <label for="sixteen">16</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-four" id="twenty-four" />
+                  <label for="twenty-four">24</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wings-item">
+            <img src="/images/bbq-wings.jpeg" alt="BBQ Wings" />
+            <div class="title">
+              <span>BBQ Wings</span>
+              <form>
+                <div>
+                  <input type="radio" name="six" id="six" />
+                  <label for="six">6</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="eight" id="eight" />
+                  <label for="eight">8</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="sixteen" id="sixteen" />
+                  <label for="sixteen">16</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-four" id="twenty-four" />
+                  <label for="twenty-four">24</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wings-item">
+            <img
+              src="/images/honey-chipotle-wings.webp"
+              alt="Honey Chipotle Wings"
+            />
+            <div class="title">
+              <span>Honey Chipotle Wings</span>
+              <form>
+                <div>
+                  <input type="radio" name="six" id="six" />
+                  <label for="six">6</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="eight" id="eight" />
+                  <label for="eight">8</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="sixteen" id="sixteen" />
+                  <label for="sixteen">16</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-four" id="twenty-four" />
+                  <label for="twenty-four">24</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wings-item">
+            <img
+              src="/images/hot-lemon-pepper-wings.webp"
+              alt="Hot Lemon Paper"
+            />
+            <div class="title">
+              <span>Hot Lemon Paper</span>
+              <form>
+                <div>
+                  <input type="radio" name="six" id="six" />
+                  <label for="six">6</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="eight" id="eight" />
+                  <label for="eight">8</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="sixteen" id="sixteen" />
+                  <label for="sixteen">16</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-four" id="twenty-four" />
+                  <label for="twenty-four">24</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wings-item">
+            <img src="/images/plain-wings.jpeg" alt="Plain Wings" />
+            <div class="title">
+              <span>Plain Wings</span>
+              <form>
+                <div>
+                  <input type="radio" name="six" id="six" />
+                  <label for="six">6</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="eight" id="eight" />
+                  <label for="eight">8</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="sixteen" id="sixteen" />
+                  <label for="sixteen">16</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="twenty-four" id="twenty-four" />
+                  <label for="twenty-four">24</label>
+                </div>
+              </form>
+              <div class="button-container">
+                <button class="customize">ADD</button>
+                <div class="plus-mines-button">
+                  <button id="decreaseBtn" class="amount">-</button>
+                  <span id="value" class="value">0</span>
+                  <button id="increaseBtn" class="amount">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Drinks -->
+    <div class="drinks">
+      <ul class="drinks-items">
+        <div class="drinks-item">
+          <img src="/images/pepsi.jpeg" alt="Pepsi" />
+          <div class="title">
+            <span>Pepsi</span>
+            <form>
+              <div>
+                <input type="radio" name="big" id="big" />
+                <label for="big">2 Liter</label>
+              </div>
+
+              <div>
+                <input type="radio" name="small" id="small" />
+                <label for="small">20 oz</label>
+              </div>
+            </form>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drinks-item">
+          <img src="/images/wild-cherry.webp" alt="Wild Cherry pepsi" />
+          <div class="title">
+            <span>Wild Cherry Pepsi</span>
+            <form>
+              <div>
+                <input type="radio" name="big" id="big" />
+                <label for="big">2 Liter</label>
+              </div>
+
+              <div>
+                <input type="radio" name="small" id="small" />
+                <label for="small">20 oz</label>
+              </div>
+            </form>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drinks-item">
+          <img src="/images/mnt-dew.webp" alt="Mountain Dew" />
+          <div class="title">
+            <span>Mountain Dew</span>
+            <form>
+              <div>
+                <input type="radio" name="big" id="big" />
+                <label for="big">2 Liter</label>
+              </div>
+
+              <div>
+                <input type="radio" name="small" id="small" />
+                <label for="small">20 oz</label>
+              </div>
+            </form>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drinks-item">
+          <img src="/images/orange.webp" alt="Orange Crush" />
+          <div class="title">
+            <span>Orange Crush</span>
+            <form>
+              <div>
+                <input type="radio" name="big" id="big" />
+                <label for="big">2 Liter</label>
+              </div>
+
+              <div>
+                <input type="radio" name="small" id="small" />
+                <label for="small">20 oz</label>
+              </div>
+            </form>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="drinks-item">
+          <img src="/images/root-beer.webp" alt="Mug Root Beer" />
+          <div class="title">
+            <span>Mug Root Beer</span>
+            <form>
+              <div>
+                <input type="radio" name="big" id="big" />
+                <label for="big">2 Liter</label>
+              </div>
+
+              <div>
+                <input type="radio" name="small" id="small" />
+                <label for="small">20 oz</label>
+              </div>
+            </form>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Deserts -->
+    <div class="deserts">
+      <ul class="desert-items">
+        <div class="desert-item">
+          <img src="/images/browni.jpeg" alt="Browni" />
+          <div class="title">
+            <span>Browni</span>
+            <p>
+              Rich, indulgent squares of moist chocolate goodness, offering a
+              perfect balance of fudgy texture and intense cocoa flavor in every
+              bite-sized treat.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desert-item">
+          <img src="/images/cpa.webp" alt="Cinnamon Pull Apart" />
+          <div class="title">
+            <span>Cinnamon Pull Apart</span>
+            <p>
+              Irresistible pieces of soft, fluffy dough swirled with cinnamon
+              sugar, baked until golden brown, and ready to be pulled apart for
+              a warm and comforting treat, perfect for sharing or savoring solo.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desert-item">
+          <img src="/images/cookie.jpeg" alt="Cookie" />
+
+          <div class="title">
+            <span>Cookie</span>
+            <p>
+              A classic treat, baked to perfection with a crispy exterior and a
+              soft, chewy interior, offering a delightful blend of sweetness and
+              flavor in every bite-sized morsel.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Papa Bites -->
+    <div class="bites">
+      <ul class="bites-items">
+        <div class="bites-item">
+          <img src="/images/jalapeno-bites.png" alt="Jalapeno Bites" />
+          <div class="title">
+            <span>Jalapeno Bites</span>
+            <p>
+              Spicy jalapeno peppers filled with creamy cheese, coated in crispy
+              breading, and fried to perfection—a fiery treat in every bite.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bites-item">
+          <img src="/images/chicken-bites.webp" alt="Chicken Bites" />
+          <div class="title">
+            <span>Chicken Bites</span>
+            <p>
+              Tender pieces of seasoned chicken, breaded and fried to crispy
+              perfection, offering a satisfying crunch and savory flavor in
+              every bite.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bites-item">
+          <img src="/images/cuppy-bites.webp" alt="Cuppy-Rony Bites" />
+
+          <div class="title">
+            <span>Cuppy-Rony Bites</span>
+            <p>
+              Irresistible bites featuring a blend of gooey melted cheese and
+              savory pepperoni, encased in a crispy breading, creating a
+              delightful fusion of flavors in every bite-sized morsel.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bites-item">
+          <img src="/images/oreo.webp" alt="Oreo Bites" />
+
+          <div class="title">
+            <span>Oreo Bites</span>
+            <p>
+              Bite-sized delights with Oreo cookies wrapped around a creamy
+              filling, all coated in chocolate—a sweet sensation in every bite.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Papadia -->
+    <div class="papadia">
+      <ul class="papadia-items">
+        <div class="papadia-item">
+          <img src="/images/philly.webp" alt="JPhilly Cheesesteak Papadia" />
+          <div class="title">
+            <span>Philly Cheesesteak Papadia</span>
+            <p>
+              A flavorful fusion of steak, melted cheese, and sautéed onions
+              folded in a warm and toasted flatbread.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <button class="customize">Customize</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="papadia-item">
+          <img src="/images/bbq-chicken.webp" alt="BBQ Chicken Papadia" />
+          <div class="title">
+            <span>BBQ Chicken Papadia</span>
+            <p>
+              A tasty blend of grilled chicken, tangy barbecue sauce, melted
+              cheese, and diced onions folded into a warm, toasted flatbread.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <button class="customize">Customize</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="papadia-item">
+          <img
+            src="/images/buffalo-chicken.webp"
+            alt="Buffalo Chicken Papadia"
+          />
+
+          <div class="title">
+            <span>Buffalo Chicken Papadia</span>
+            <p>
+              Spicy chicken, zesty buffalo sauce, melted cheese, and onions
+              folded into warm, toasted flatbread—a fiery flavor explosion in
+              every bite.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <button class="customize">Customize</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Sides -->
+    <div class="sides">
+      <ul class="sides-items">
+        <div class="sides-item">
+          <img src="/images/breadsticks.webp" alt="Breadsticks" />
+          <div class="title">
+            <span>Breadsticks</span>
+            <p>
+              Crispy Italian snacks, breadsticks are slender sticks of seasoned
+              yeast dough, offering a savory crunch perfect for pairing with
+              meals or enjoying on their own.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sides-item">
+          <img
+            src="/images/g-breadsticks.webp"
+            alt="Garlic Parmezan Breadsticks"
+          />
+          <div class="title">
+            <span>Garlic Parmezan Breadsticks</span>
+            <p>
+              Crispy twists of seasoned dough, infused with garlic and topped
+              with savory Parmesan cheese for a burst of flavor in every bite.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button id="decreaseBtn" class="amount">-</button>
+                <span id="value" class="value">0</span>
+                <button id="increaseBtn" class="amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sides-item">
+          <img src="/images/garlic_knots.webp" alt="Garlic Knots" />
+
+          <div class="title">
+            <span>Garlic Knots</span>
+            <p>
+              Chewy knots of dough, infused with garlic and coated in aromatic
+              parsley and Parmesan, offering a flavorful twist on traditional
+              breadsticks.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button class="decreaseBtn amount">-</button>
+                <span class="value v">0</span>
+                <button class="increaseBtn amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sides-item">
+          <img src="/images/cheesesticks.webp" alt="Cheesesticks" />
+
+          <div class="title">
+            <span>Cheesesticks</span>
+            <p>
+              Deliciously crispy snacks featuring a savory blend of stretchy
+              cheese encased in golden-brown, seasoned dough, perfect for
+              satisfying cheese cravings with every bite.
+            </p>
+            <div class="button-container">
+              <button class="customize">ADD</button>
+              <div class="plus-mines-button">
+                <button class="decreaseBtn amount">-</button>
+                <span class="value v">0</span>
+                <button class="increaseBtn amount">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</section>

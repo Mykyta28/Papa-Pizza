@@ -1,0 +1,24 @@
+<div class="orders">
+  {{#each orders}}
+  <div class="order">
+      <h2>Order № {{_id}}</h2>
+      <p>Customer: {{customer.firstName}} {{customer.lastName}}</p>
+      <p>Date: {{date}}</p>
+      <div class="order-details">
+        {{#each details}}
+          <div class="pizza-item">
+            <img src="{{pizza.img}}" />
+            <p>Name: {{pizza.name}}</p>
+            <p>Size: {{size}} inches</p>
+            <p>Quantity: {{quantity}}</p>
+            <p>Toppings:
+              {{#each toppings}}{{.}}{{#unless @last}},
+                {{/unless}}{{/each}}</p>
+          </div>
+        {{/each}}
+      </div>
+      <p>Total: ${{total}}</p>
+      <p>Comments: {{comments}}</p>
+    </div>
+  {{/each}}
+</div>

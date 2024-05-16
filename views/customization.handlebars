@@ -1,0 +1,67 @@
+<div id="message-container"></div>
+<div class="pizza-customization">
+  <h1>Customize Your Pizza</h1>
+  <div class="pizza-details">
+    <h2 id="pizzaName">{{pizza.name}}</h2>
+    <img id="pizzaImg" src="{{pizza.img}}" alt="{{pizza.name}}" />
+  </div>
+  <div class="options">
+    <div class="size-options">
+      <span>Size:</span>
+      <input type="radio" id="size10" name="size" value="10" />
+      <label for="size10">10"</label>
+      <input type="radio" id="size12" name="size" value="12" />
+      <label for="size12">12"</label>
+      <input type="radio" id="size14" name="size" value="14" />
+      <label for="size14">14"</label>
+      <input type="radio" id="size16" name="size" value="16" />
+      <label for="size16">16"</label>
+    </div>
+    <div class="quantity-options">
+      <span for="quantity">Quantity:</span>
+      <button id="decrease">-</button>
+      <input
+        type="text"
+        id="quantity"
+        name="quantity"
+        value="{{params.amount}}"
+        readonly
+      />
+      <button id="increase">+</button>
+    </div>
+    <div class="toppings-options">
+      <span for="toppings">Toppings:</span>
+      <input type="checkbox" id="pepperoni" name="toppings" value="Pepperoni" />
+      <label for="pepperoni">Pepperoni</label>
+      <input type="checkbox" id="sausage" name="toppings" value="Sausage" />
+      <label for="sausage">Sausage</label>
+      <input type="checkbox" id="salami" name="toppings" value="Salami" />
+      <label for="salami">Salami</label>
+      <input
+        type="checkbox"
+        id="greenPepper"
+        name="toppings"
+        value="Green pepper"
+      />
+      <label for="greenPepper">Green Pepper</label>
+      <input type="checkbox" id="tomato" name="toppings" value="Tomato" />
+      <label for="tomato">Tomato</label>
+      <input
+        type="checkbox"
+        id="blackOlives"
+        name="toppings"
+        value="Black olives"
+      />
+      <label for="blackOlives">Black Olives</label>
+      <input
+        type="checkbox"
+        id="threeCheese"
+        name="toppings"
+        value="Three cheese"
+      />
+      <label for="threeCheese">Three Cheese</label>
+    </div>
+    <input type="hidden" id="pizzaId" value="{{pizza._id}}" />
+    <button id="addToCart">Add to Cart</button>
+  </div>
+</div>

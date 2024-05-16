@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Stuffed Crust (Base)",
+    "img": "/images/stuffed-crusted-pizza-web.jpeg"
+  },
+  {
+    "name": "New-Yourk Style (Base)",
+    "img": "/images/ny-style-crust-pizza.webp"
+  },
+  { "name": "Hand Tost (Base)", "img": "/images/hand-tossed.jpeg" },
+  { "name": "Thin Crust (Base)", "img": "/images/thin-crust.webp" },
+  { "name": "Gluten Free (Base)", "img": "/images/gluten-free.jpeg" }
+]
