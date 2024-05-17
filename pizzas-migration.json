@@ -1,13 +1,27 @@
 [
   {
     "name": "Stuffed Crust (Base)",
-    "img": "/images/stuffed-crusted-pizza-web.jpeg"
+    "img": "/images/stuffed-crusted-pizza-web.jpeg",
+    "price": 15
   },
   {
     "name": "New-Yourk Style (Base)",
-    "img": "/images/ny-style-crust-pizza.webp"
+    "img": "/images/ny-style-crust-pizza.webp",
+    "price": 16
   },
-  { "name": "Hand Tost (Base)", "img": "/images/hand-tossed.jpeg" },
-  { "name": "Thin Crust (Base)", "img": "/images/thin-crust.webp" },
-  { "name": "Gluten Free (Base)", "img": "/images/gluten-free.jpeg" }
+  {
+    "name": "Hand Tost (Base)",
+    "img": "/images/hand-tossed.jpeg",
+    "price": 14
+  },
+  {
+    "name": "Thin Crust (Base)",
+    "img": "/images/thin-crust.webp",
+    "price": 16
+  },
+  {
+    "name": "Gluten Free (Base)",
+    "img": "/images/gluten-free.jpeg",
+    "price": 17
+  }
 ]
