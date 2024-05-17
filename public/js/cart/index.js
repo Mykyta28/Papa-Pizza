@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <button class="quantity-btn" data-action="decrease">-</button>
                     <button class="quantity-btn" data-action="increase">+</button>
                 </div>
-                <button class="remove-btn">Удалить</button>
+                <button class="remove-btn">Remove</button>
                 </div>
             `;
 
