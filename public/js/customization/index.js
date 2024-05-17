@@ -18,6 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const sizeLabels = document.querySelectorAll(".size-options label");
+  const sizeInputs = document.querySelectorAll(".size-options input");
+
+  const urlParams = new URLSearchParams(window.location.search);
+  for (let index = 0; index < sizeInputs.length; index++) {
+    if (sizeInputs[index].value == urlParams.get("size")) {
+      sizeInputs[index].checked = true;
+      sizeLabels[index].classList.add("active");
+    }
+  }
 
   // Добавляем обработчик события для каждого лейбла
   sizeLabels.forEach(function (label) {
