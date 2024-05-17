@@ -30,11 +30,11 @@ router.post("/create", authenticate, async (req, res) => {
   const newOrder = {
     customer: req.session.user._id,
     details: req.body.map((p) => {
-      p.pizza = p._id;
-      delete p._id;
+      p.pizza = p.id;
+      delete p.id;
       return p;
     }),
-    comments: "You good boy",
+    comments: "Thank you!",
     total,
   };
 
